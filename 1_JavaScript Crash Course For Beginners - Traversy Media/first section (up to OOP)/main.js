@@ -275,4 +275,72 @@ console.log(typeof addTwoNums);
 
 todos.forEach((todo) => console.log(todo));
 
-// Time Stamp 59:20
+/*Object oriented programming
+Two ways:
+1. Constructor function with protypes
+2. ES6 Classes
+*/
+// 1. ES5 AND BEFORE
+function Person(firstName, lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob); //Date Object
+
+    //Class methods
+    
+
+    // this.getBirthYear = function(){
+    //     return this.dob.getFullYear
+    // }
+
+    // this.getFullName = function(){
+    //     return `${this.firstName} ${this.lastName}`
+    // }
+
+    //We can put the functions in protype section of object because not every 
+    //instance of an object will use all the functions available to it.
+    //See below
+}
+
+Person.prototype.getBirthYear = function(){
+    return this.dob.getFullYear
+}
+
+Person.prototype.getFullName = function(){
+    return `${this.firstName} ${this.lastName}`;
+}
+
+    //Instantitate object
+
+const person1 = new Person("John", "Doe", "4-3-1980");
+const person2 = new Person("Mary", "Smith", "3-6-1970");
+
+console.log(person1);
+console.log(person2);
+console.log(person2.dob);
+console.log(person2.getBirthYear());
+console.log(person1.getFullName());
+
+
+// 1. ES6 Classes
+class Employee {
+    constructor(firstName, lastName, dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob); //Date Object
+    }
+
+    getBirthYear = function(){
+        return this.dob.getFullYear
+    }
+    
+    getFullName = function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const emp1 = new Employee("Anthony", "DoeBlack", "4-3-1980");
+const emp2 = new Employee("Jill", "Yearns", "3-6-1970");
+
+console.log(emp1);
+console.log(emp2);
