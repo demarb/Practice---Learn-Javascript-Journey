@@ -9,3 +9,4 @@ This repository is a **Practice Repository** and will primarily include follow a
 ## Projects Featured
 1. Color Flipper : changes the background of html body on click of button. Good introductory project for manipulating the Document Object Model (DOM)
 2. Number Counter : counts up or down by 1 on each button click. 
+3. Review Carousel : scrolls through 4 reviews or generate one of 4 at random
