@@ -52,27 +52,34 @@ const colorObjs = [
     
 ];
 
-let genNum = (x=10) => Math.floor((Math.random() * x));
-// console.log(randNum());
+let genNum = x => Math.floor((Math.random() * x));
 
-const changeBackground = (colorId= genNum()) => {
+const changeBackground = () => {
 
-    console.log(colorId);
+    let colorId= -1;
+    colorId = genNum(10);
+    console.log(`SEARCHING FOR COLOR ID: ${colorId}`);
+
+    let colorName = "";
+    let colorHex = ""; 
 
     colorObjs.forEach(function(color){
         if (color.id === colorId){
+            console.log("COLOR LOCATED");
             colorName = color.colorName;
             colorHex = color.hexValue;
         }
     });
 
-    console.log(colorName);
-    console.log(colorHex);
+    console.log("SWITCHING BACKGROUND TO: ");
+    console.log(`COLOR: ${colorName}`);
+    console.log(`HEX VALUE: ${colorHex}`);
 
     document.body.style.background = colorHex;
-    crtClr = document.querySelector('#flipper-current');
+    let crtClr = document.querySelector('#flipper-current');
     crtClr.textContent = colorName;
 
 };
 
-changeBackground();
+let btn_element = document.querySelector("#flipper-btn");
+btn_element.addEventListener("click", changeBackground);
