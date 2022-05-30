@@ -7,4 +7,5 @@ This repository is a **Practice Repository** and will primarily include follow a
 1. JavaScript Crash Course For Beginners - Traversy Media (from Youtube)
 
 ## Projects Featured
-1. Color Flipper : changes the backround of html body on click of button. Good introductory project for manipulating the Document Object Model (DOM)
+1. Color Flipper : changes the background of html body on click of button. Good introductory project for manipulating the Document Object Model (DOM)
+2. Number Counter : counts up or down by 1 on each button click. 
