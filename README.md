@@ -12,3 +12,4 @@ This repository is a **Practice Repository** and will primarily include follow a
   2. Number Counter : counts up or down by 1 on each button click. 
   3. Review Carousel : scrolls through 4 reviews or generate one of 4 at random
   4. Responsive Navbar : hamburger menu that expands to show navigation on smaller screens
+  5. Sidebar Toggle : a sidebar that toggles on click of button
