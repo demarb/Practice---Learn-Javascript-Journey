@@ -1,17 +1,17 @@
-// toggleBtn = document.querySelector(".sidebar-toggle");
-// closeBtn = document.querySelector(".close-btn");
-// sidebar = document.querySelector(".sidebar");
+openModalBtn = document.querySelector(".modal-btn");
+closeModalBtn = document.querySelector(".modal-exit");
+modal = document.querySelector(".modal-popup");
 
-// console.log(toggleBtn);
-// console.log(closeBtn);
-// console.log(sidebar.classList);
+console.log(openModalBtn);
+console.log(closeModalBtn);
+console.log(modal.classList);
 
-// toggleBtn.addEventListener("click", (e)=>{
-//     console.log("Inside action open listener");
-//     sidebar.classList.toggle("show-sidebar");
-// });
+openModalBtn.addEventListener("click", (e) => {
+    console.log("Open modal");
+    modal.classList.toggle("hide-modal");
+});
 
-// closeBtn.addEventListener("click", (e)=> {
-//     console.log("Inside action close listener");
-//     sidebar.classList.toggle("show-sidebar");
-// });
+closeModalBtn.addEventListener("click", (e) => {
+    console.log("Close modal");
+    modal.classList.remove("hide-modal");
+});
