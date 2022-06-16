@@ -57,10 +57,20 @@ nav{
 
 .faq-response{
     font-size: 18px;
+    border-top: solid #0000003b 1px;
 }
 
 .hide-text{
     display: none;
+}
+
+.show-text{
+    display: block;
+}
+
+.btn-rotate{
+    transition: 1s;
+    transform:rotate(225deg);
 }
 
 @media all and (min-width: 770px) {
