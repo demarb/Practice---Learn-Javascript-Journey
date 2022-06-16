@@ -14,3 +14,4 @@ This repository is a **Practice Repository** and will primarily include follow a
   4. Responsive Navbar : hamburger menu that expands to show navigation on smaller screens
   5. Sidebar Toggle : a sidebar that toggles on click of button, and disappears on the click of another
   6. Modal : a popup that opens on the click of a button
+  7. Questions : a FAQ like section that expands with responses for respective questions
