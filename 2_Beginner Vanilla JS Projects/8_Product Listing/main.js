@@ -95,19 +95,52 @@ const products = [
         img: "./assets/products/product (12).jpg",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel iaculis leo. Ut erat odio, porta eget lacus non, luctus posuere dui."
     },
-]
+];
 
 const listingSection = document.querySelector(".listing");
-const filterBtns = document.querySelectorAll(".productFilter");
+const filterBtnSection = document.querySelector(".filter-btns");
+
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
+    showFilterBtns()
     showProducts(products);
-
-    
-
 });
 
+function showFilterBtns(){
+    // Get only unique product categories
+    const uniqueCategories = products.reduce((values, product)=>{
+        if (!values.includes(product.category)){
+            values.push(product.category)
+        }
+        return values
+    }, ['All']);
+
+    console.log(uniqueCategories);
+
+    const categoryBtns = uniqueCategories.map(function(category){
+        return `<button class="productFilter" data-id=${category}>${category}</button>`
+    }).join('');
+
+    filterBtnSection.innerHTML = categoryBtns;
+
+    // Call btns after being added to innerHTML, then add event listener
+    const filterBtns = document.querySelectorAll(".productFilter");
+    filterBtns.forEach((btn)=>{
+        btn.addEventListener('click', (e)=>{
+            console.log(e.currentTarget.dataset);
+            const btnCategory = e.currentTarget.dataset.id;
+            const productCategory = products.filter((product)=>{
+                if (product.category == btnCategory){
+                    return product
+                } else if(btnCategory == "All"){
+                    return product
+                }
+            })
+            showProducts(productCategory);
+        });
+    });
+}
 
 function showProducts(productsArr){
     let currentProducts = productsArr.map(function(product){
@@ -129,20 +162,7 @@ function showProducts(productsArr){
     listingSection.innerHTML = currentProducts;
 }
 
-filterBtns.forEach((btn)=>{
-    btn.addEventListener('click', (e)=>{
-        console.log(e.currentTarget.dataset);
-        const btnCategory = e.currentTarget.dataset.id;
-        const productCategory = products.filter((product)=>{
-            if (product.category == btnCategory){
-                return product
-            } else if(btnCategory == "all"){
-                return product
-            }
-        })
-        showProducts(productCategory);
-    });
-});
+
 
 
 
