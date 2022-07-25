@@ -100,8 +100,6 @@ const products = [
 const listingSection = document.querySelector(".listing");
 const filterBtnSection = document.querySelector(".filter-btns");
 
-
-
 window.addEventListener('DOMContentLoaded', ()=>{
     showFilterBtns()
     showProducts(products);
@@ -111,7 +109,7 @@ function showFilterBtns(){
     // Get only unique product categories
     const uniqueCategories = products.reduce((values, product)=>{
         if (!values.includes(product.category)){
-            values.push(product.category)
+            values.push(product.category);
         }
         return values
     }, ['All']);
@@ -132,9 +130,9 @@ function showFilterBtns(){
             const btnCategory = e.currentTarget.dataset.id;
             const productCategory = products.filter((product)=>{
                 if (product.category == btnCategory){
-                    return product
+                    return product;
                 } else if(btnCategory == "All"){
-                    return product
+                    return product;
                 }
             })
             showProducts(productCategory);
@@ -160,70 +158,4 @@ function showProducts(productsArr){
     //Join with empty string passed, converts our array like object to a string removing the comma's returned in the process
     currentProducts = currentProducts.join('');
     listingSection.innerHTML = currentProducts;
-}
-
-
-
-
-
-
-
-// allBtn.addEventListener('click', (e)=>{
-//     allFilter();
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-faqExpandBtns = document.querySelectorAll(".expand-faq");
-console.log(faqExpandBtns)
-faqResponse = document.querySelectorAll(".faq-response");
-
-faqExpandBtns.forEach(btn => {
-    console.log(faqExpandBtns);
-
-    btn.addEventListener("click", (e)=>{
-        // Dom Traversal
-        let faqSelection = e.currentTarget.parentElement.parentElement;
-        expandFaq(faqSelection);
-    });
-})
-
-expandFaq = (faqSelection) => {
-    faqResponse.forEach(response => {
-        response.parentElement.firstElementChild.lastElementChild.firstElementChild.classList.remove("btn-rotate");
-        response.classList.remove("show-text");
-    });
-    faqSelection.firstElementChild.lastElementChild.firstElementChild.classList.add("btn-rotate");
-    faqSelection.lastElementChild.classList.add("show-text");
 }

@@ -15,4 +15,4 @@ This repository is a **Practice Repository** and will primarily include follow a
   5. Sidebar Toggle : a sidebar that toggles on click of button, and disappears on the click of another
   6. Modal : a popup that opens on the click of a button
   7. Questions : a FAQ like section that expands with responses for respective questions
-  8. Product Listing : a listing/menu like page with different products displayed dynamically
+  8. Product Listing : a listing/menu like page with different products displayed dynamically. The filter buttons are also dynamic.
